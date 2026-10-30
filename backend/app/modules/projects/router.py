@@ -4,7 +4,7 @@ from uuid import UUID, uuid4
 import json
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
-from app.core.database import connect
+from app.core.database import connect, has_table, project_scoped_tables
 
 router = APIRouter(prefix='/api/projects', tags=['projects'])
 
@@ -49,7 +49,7 @@ def parse(row):
     return brief
 
 def _has_table(db, name):
-    return bool(db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (name,)).fetchone())
+    return has_table(db, name)
 
 @router.get('')
 def list_projects():
@@ -90,12 +90,8 @@ def delete_project(project_id: str):
         if not db.execute('SELECT 1 FROM projects WHERE id=?',(project_id,)).fetchone():
             raise HTTPException(404, 'Project not found')
         # Delete all project-scoped records, including revision history.
-        tables = db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
-        for row in tables:
-            table = row['name']
-            if table == 'projects' or not table.replace('_','').isalnum():
+        for table in project_scoped_tables(db):
+            if table == 'projects' or not table.replace('_', '').isalnum():
                 continue
-            columns = {col['name'] for col in db.execute(f'PRAGMA table_info("{table}")')}
-            if 'project_id' in columns:
-                db.execute(f'DELETE FROM "{table}" WHERE project_id=?', (project_id,))
+            db.execute(f'DELETE FROM "{table}" WHERE project_id=?', (project_id,))
         db.execute('DELETE FROM projects WHERE id=?', (project_id,))

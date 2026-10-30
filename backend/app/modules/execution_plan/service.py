@@ -5,7 +5,7 @@ import threading
 from datetime import datetime, timezone, date
 from decimal import Decimal, InvalidOperation
 from urllib import request, error, parse
-from app.core.database import connect
+from app.core.database import connect, has_table
 from app.modules.concept import service as concept_service
 
 _LOCK = threading.RLock()
@@ -37,7 +37,7 @@ def get(project_id):
 def save(project_id,status,version=None,concept=None,plan=None,error_message=None):
     if status == 'running':
         with connect() as db:
-            if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='project_approvals'").fetchone():
+            if has_table(db, 'project_approvals'):
                 db.execute('DELETE FROM project_approvals WHERE project_id=?', (project_id,))
     setup()
     with connect() as db:
