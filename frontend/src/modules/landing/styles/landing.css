@@ -1,0 +1,129 @@
+/* Landing styles are intentionally scoped; other modules are unaffected. */
+.epivibe-landing {
+  --landing-text: #f9f7ff;
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  background: #100d25;
+  color: var(--landing-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.epivibe-landing__backdrop,
+.epivibe-landing__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.epivibe-landing__backdrop {
+  background-image: var(--epivibe-hero-image);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.epivibe-landing__shade {
+  background: linear-gradient(180deg, rgba(9, 7, 28, .55) 0%, rgba(9, 7, 28, .15) 36%, rgba(10, 5, 30, .02) 60%, rgba(9, 5, 30, .65) 100%);
+}
+
+.epivibe-landing__header {
+  position: relative;
+  z-index: 1;
+  padding: clamp(22px, 3.3vw, 48px) clamp(24px, 4.6vw, 80px);
+}
+
+.epivibe-landing__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(10px, 1vw, 17px);
+}
+
+.epivibe-landing__mark { width: clamp(60px, 5.5vw, 92px); height: auto; flex: none; }
+.epivibe-landing__brand-copy { display: flex; flex-direction: column; line-height: 1.1; }
+.epivibe-landing__brand-name { font-size: clamp(29px, 2.7vw, 46px); font-weight: 780; letter-spacing: -.055em; }
+.epivibe-landing__brand-name sup { font-size: .23em; vertical-align: super; letter-spacing: 0; margin-left: 2px; }
+.epivibe-landing__brand-tagline { font-size: clamp(12px, 1.12vw, 18px); margin-top: 4px; letter-spacing: -.015em; }
+
+.epivibe-landing__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: clamp(165px, 19vh, 225px) 24px 36px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.epivibe-landing__headline {
+  margin: 0;
+  max-width: 1400px;
+  font-size: clamp(36px, 4.25vw, 74px);
+  line-height: 1.07;
+  font-weight: 780;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .32);
+}
+
+.epivibe-landing__headline > span { display: block; }
+.epivibe-landing__headline em {
+  font-style: normal;
+  background: linear-gradient(100deg, #956cff 0%, #d95ef7 70%, #f17ed6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.epivibe-landing__cta {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(42px, 8vh, 100px);
+  transform: translateX(-50%);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(15px, 2vw, 30px);
+  width: min(100%, 540px);
+  min-height: 82px;
+  padding: 18px 26px;
+  border: 2px solid rgba(255, 172, 252, .85);
+  border-radius: 999px;
+  background: linear-gradient(105deg, #6a22ff 0%, #922cf6 55%, #d52bea 100%);
+  box-shadow: 0 0 24px rgba(183, 52, 250, .4), inset 0 1px 9px rgba(255, 255, 255, .2);
+  color: white;
+  text-decoration: none;
+  font-size: clamp(18px, 1.85vw, 29px);
+  font-weight: 750;
+  letter-spacing: -.025em;
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: filter .18s ease, box-shadow .18s ease;
+}
+.epivibe-landing__cta:hover { filter: brightness(1.12); box-shadow: 0 0 34px rgba(198, 71, 255, .65); }
+.epivibe-landing__cta:focus-visible { outline: 3px solid white; outline-offset: 5px; }
+
+@media (max-width: 700px) {
+  .epivibe-landing__backdrop { background-position: 54% center; }
+  .epivibe-landing__shade { background: linear-gradient(180deg, rgba(9, 7, 28, .72), rgba(9, 7, 28, .42) 48%, rgba(9, 5, 30, .75)); }
+  .epivibe-landing__content { padding-top: clamp(175px, 23vh, 240px); }
+  .epivibe-landing__headline { font-size: clamp(34px, 8vw, 56px); }
+  .epivibe-landing__headline > span { display: inline; }
+  .epivibe-landing__headline > span + span::before { content: ' '; }
+  .epivibe-landing__cta { width: calc(100% - 44px); min-height: 68px; bottom: 7vh; padding: 14px 16px; font-size: clamp(16px, 4.5vw, 22px); }
+}
+
+@media (max-height: 620px) and (min-width: 701px) {
+  .epivibe-landing__content { padding-top: 130px; }
+  .epivibe-landing__headline { font-size: clamp(30px, 4vw, 54px); }
+  .epivibe-landing__cta { bottom: 22px; min-height: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .epivibe-landing__cta { transition: none; }
+}

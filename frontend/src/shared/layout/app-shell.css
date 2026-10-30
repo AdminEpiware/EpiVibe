@@ -1,0 +1,128 @@
+/* EpiVibe application shell. Landing page styles are intentionally unaffected. */
+.epi-shell {
+  --epi-side-width: 225px;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  box-sizing: border-box;
+  color: #faf8ff;
+  background-color: #0b0929;
+  background-image: url('/images/backgrounds/app-shell-background.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: var(--epi-side-width) minmax(0, 1fr);
+}
+
+.epi-shell-sidebar {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-right: 1px solid rgba(186, 111, 255, .42);
+}
+
+/* Reserves space for branding baked into the background PNG. */
+.epi-brand-spacer { height: clamp(110px, 13.8vh, 150px); }
+
+.epi-sidebar-nav {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.epi-sidebar-link {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 11px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #f8f6ff;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 600;
+  transition: background .15s ease, box-shadow .15s ease;
+}
+
+.epi-sidebar-link span { min-width: 0; overflow-wrap: anywhere; }
+
+.epi-sidebar-link svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+.epi-sidebar-link:hover { background: rgba(167, 78, 255, .24); }
+.epi-sidebar-link.is-active {
+  background: linear-gradient(110deg, #b21bff, #6817e9 70%, #a31af5);
+  box-shadow: inset 0 0 0 1px rgba(227, 135, 255, .45), 0 5px 22px rgba(89, 0, 190, .24);
+}
+.epi-sidebar-link:focus-visible { outline: 3px solid #f4b7ff; outline-offset: 3px; }
+
+.epi-shell-workspace {
+  min-width: 0;
+  padding: clamp(28px, 7vh, 90px) clamp(28px, 4vw, 76px) clamp(28px, 7vh, 90px) 80px;
+}
+.epi-page { width: 100%; max-width: 1250px; margin: 0; }
+.epi-page-header h1 {
+  font-size: clamp(34px, 3.5vw, 56px);
+  line-height: 1.12;
+  font-weight: 750;
+  letter-spacing: -.035em;
+  margin: 0 0 14px;
+}
+.epi-page-header p {
+  font-size: clamp(16px, 1.4vw, 22px);
+  color: #eee7fa;
+  margin: 0;
+  max-width: 950px;
+  line-height: 1.5;
+}
+.epi-shell-placeholder {
+  margin-top: 38px;
+  padding: 24px 28px;
+  border: 1px solid rgba(211, 145, 255, .28);
+  background: rgba(21, 10, 55, .43);
+  border-radius: 20px;
+}
+.epi-shell-placeholder a { color: #f3b7ff; }
+
+@media (max-width: 800px) {
+  .epi-shell { --epi-side-width: 220px; background-size: cover; background-position: left center; }
+  .epi-shell-sidebar { padding: 0 10px; }
+  .epi-brand-spacer { height: 105px; }
+  .epi-sidebar-link { padding: 12px 10px; gap: 10px; font-size: 14px; }
+  .epi-shell-workspace { padding: 45px 22px; }
+}
+@media (max-width: 540px) {
+  .epi-shell { display: block; background-size: cover; }
+  .epi-shell-sidebar { padding: 0 12px; border-right: 0; }
+  .epi-brand-spacer { height: 110px; }
+  .epi-sidebar-nav { flex-direction: row; gap: 6px; }
+  .epi-sidebar-link {
+    width: auto;
+    flex: 1;
+    min-height: 50px;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 5px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+  .epi-sidebar-link svg { width: 18px; height: 18px; }
+  .epi-shell-workspace { padding: 38px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .epi-sidebar-link { transition: none; }
+}

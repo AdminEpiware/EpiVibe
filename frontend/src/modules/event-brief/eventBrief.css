@@ -1,0 +1,42 @@
+.epi-brief-page{width:100%;max-width:1160px;margin:0 auto;color:white}.epi-brief-heading{margin-bottom:26px}.epi-brief-heading h1{font-size:clamp(32px,3vw,46px);letter-spacing:-.03em;margin:0 0 8px;font-weight:800}.epi-brief-heading p{font-size:17px;color:#e8dff2;margin:0}.epi-brief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.epi-brief-card{background:rgba(24,11,58,.7);border:1px solid rgba(197,122,255,.36);border-radius:17px;padding:20px 22px;backdrop-filter:blur(9px);min-width:0}.epi-brief-context{grid-column:1/-1}.epi-brief-field{display:flex;flex-direction:column;gap:11px;min-width:0}.epi-brief-field>span:first-child,.epi-brief-field legend{font-size:15px;font-weight:700;color:#fff}.epi-brief-field b{color:#f6a7ff}.epi-brief-field em{font-style:normal;color:#bfb0d0;font-size:12px;font-weight:400}.epi-brief-field input:not([type=checkbox]),.epi-brief-field select,.epi-brief-field textarea{width:100%;min-width:0;background:rgba(15,8,42,.72);border:1px solid rgba(176,138,211,.5);border-radius:10px;color:white;padding:12px 14px;font:inherit;outline:none}.epi-brief-field select{appearance:none;padding-right:35px}.epi-brief-field option{background:#20103d;color:white}.epi-brief-field input:focus,.epi-brief-field select:focus,.epi-brief-field textarea:focus{border-color:#df91ff;box-shadow:0 0 0 2px rgba(190,85,255,.2)}.epi-brief-field input::placeholder,.epi-brief-field textarea::placeholder{color:#a99dbd}.epi-brief-select{position:relative}.epi-brief-select svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none}.epi-brief-multi{border:0;padding:0;margin:0}.epi-brief-multi legend{padding:0;margin-bottom:10px}.epi-brief-options{display:flex;flex-wrap:wrap;gap:8px}.epi-brief-options label{display:flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid rgba(183,137,224,.5);border-radius:9px;background:rgba(23,10,50,.55);font-size:13px;cursor:pointer}.epi-brief-options label.selected{background:rgba(134,35,221,.48);border-color:#d58cff}.epi-brief-options input{accent-color:#c452ff}.epi-brief-field small{color:#ffb3c7;font-size:12px}.epi-brief-dates{display:grid;grid-template-columns:1fr 1fr;gap:10px}.epi-brief-dates label{display:flex;flex-direction:column;gap:6px;font-size:12px;color:#d8cce6}.epi-brief-dates input{color-scheme:dark}.epi-brief-budget{display:flex;gap:10px}.epi-brief-budget select{max-width:130px;flex-shrink:0}.epi-brief-hint{font-size:12px;color:#cbbcd9;margin:0}.epi-brief-counter{font-size:12px;color:#bcaed1;align-self:flex-end}.epi-brief-actions{display:flex;justify-content:flex-end;gap:13px;align-items:center;margin-top:25px;flex-wrap:wrap}.epi-brief-actions button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:11px;border:1px solid rgba(219,167,255,.5);font:inherit;font-weight:700;cursor:pointer;color:white}.epi-brief-cancel{background:transparent}.epi-brief-save{background:rgba(82,36,132,.7)}.epi-brief-primary{background:linear-gradient(110deg,#a72bfa,#6d20ed);box-shadow:0 0 20px rgba(149,34,237,.4)}.epi-brief-actions button:hover{filter:brightness(1.15)}.epi-brief-notice{padding:12px 16px;background:rgba(54,27,96,.85);border:1px solid rgba(203,133,255,.6);border-radius:10px;margin-top:14px}@media(max-width:950px){.epi-brief-grid{grid-template-columns:1fr}.epi-brief-context{grid-column:auto}}@media(max-width:540px){.epi-brief-card{padding:16px}.epi-brief-dates{grid-template-columns:1fr}.epi-brief-actions button{flex:1}.epi-brief-budget select{max-width:105px}}
+
+/* Event Brief V1.2: compact, reference-aligned desktop layout */
+.epi-shell-workspace:has(.epi-brief-page){padding:clamp(20px,3vh,30px) clamp(24px,3vw,52px) 18px clamp(26px,3vw,52px)}
+.epi-brief-page{max-width:1160px}
+.epi-brief-heading{margin-bottom:18px}
+.epi-brief-heading h1{font-size:clamp(31px,2.5vw,43px);line-height:1.1;margin-bottom:7px}
+.epi-brief-heading p{font-size:16px}
+.epi-brief-grid{gap:12px 16px}
+.epi-brief-card{padding:13px 17px;border-radius:16px;background:rgba(48,30,72,.64)}
+.epi-brief-field{gap:7px}
+.epi-brief-field>span:first-child{font-size:14px}
+.epi-brief-field input:not([type=checkbox]),.epi-brief-field select,.epi-brief-field textarea{padding:9px 12px;border-radius:9px;background:rgba(108,91,139,.23);font-size:14px;min-height:38px}
+.epi-brief-field textarea{min-height:58px;resize:vertical}
+.epi-brief-dates label{gap:3px}
+.epi-brief-budget select{max-width:105px}
+.epi-brief-hint{font-size:11px}
+.epi-brief-actions{margin-top:14px;gap:10px}
+.epi-brief-actions button{padding:10px 16px;border-radius:11px;font-size:14px}
+.epi-brief-multiselect{position:relative;min-width:0}
+.epi-brief-multiselect summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid rgba(176,138,211,.5);border-radius:9px;padding:9px 12px;min-height:38px;background:rgba(108,91,139,.23);font-size:14px}
+.epi-brief-multiselect summary::-webkit-details-marker{display:none}
+.epi-brief-multiselect summary svg{flex-shrink:0;transition:transform .2s}
+.epi-brief-multiselect[open] summary svg{transform:rotate(180deg)}
+.epi-brief-selected,.epi-brief-placeholder{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.epi-brief-placeholder{color:#b9accb}
+.epi-brief-dropdown{position:absolute;z-index:50;top:calc(100% + 5px);left:0;right:0;max-height:210px;overflow-y:auto;padding:6px;background:#271341;border:1px solid rgba(205,146,255,.7);border-radius:10px;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.epi-brief-dropdown label{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:7px;cursor:pointer;font-size:13px}
+.epi-brief-dropdown label:hover,.epi-brief-dropdown label.selected{background:rgba(158,57,238,.28)}
+.epi-brief-dropdown input{accent-color:#b33bfa}
+@media (min-width:951px) and (min-height:650px){.epi-brief-page{max-height:calc(100dvh - 48px)}.epi-brief-page .epi-progress{margin-bottom:20px}}
+@media (max-width:950px){.epi-shell-workspace:has(.epi-brief-page){padding:25px 20px}.epi-brief-page{max-height:none}}
+
+/* V1.3: portal dropdowns escape card stacking contexts and never alter form height. */
+.epi-brief-multi-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:38px;padding:9px 12px;border:1px solid rgba(176,138,211,.5);border-radius:9px;background:rgba(108,91,139,.23);color:#fff;font:inherit;font-size:14px;text-align:left;cursor:pointer}
+.epi-brief-multi-trigger:focus-visible{outline:2px solid #d58cff;outline-offset:2px}
+.epi-brief-multi-trigger svg{flex-shrink:0;transition:transform .2s}
+.epi-brief-chevron-open{transform:rotate(180deg)}
+.epi-brief-floating-menu{box-sizing:border-box;overflow-y:auto;overscroll-behavior:contain;padding:6px;background:#241039;color:#fff;border:1px solid #a65dd7;border-radius:10px;box-shadow:0 14px 36px rgba(0,0,0,.65);scrollbar-width:thin;scrollbar-color:#8046ad #241039}
+.epi-brief-floating-menu label{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;cursor:pointer;font-size:13px;line-height:19px}
+.epi-brief-floating-menu label:hover,.epi-brief-floating-menu label.selected{background:#502174}
+.epi-brief-floating-menu input{accent-color:#b33bfa;flex-shrink:0}

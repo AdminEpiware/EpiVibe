@@ -1,0 +1,25 @@
+/* EpiVibe Home V2.1 — independent page styling; does not change shared shell */
+.epi-shell-workspace .epi-home { width: 100%; max-width: 1260px; margin-inline: auto; color: #fff; }
+.epi-home .epi-home-welcome h1 { margin: 0 0 12px; font-size: clamp(34px, 3.2vw, 50px); font-weight: 800; letter-spacing: -.035em; line-height: 1.12; }
+.epi-home .epi-home-welcome p { max-width: 930px; margin: 0; font-size: clamp(16px, 1.22vw, 20px); line-height: 1.5; color: #f2ecfa; }
+.epi-home .epi-home-hero { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; min-height: 350px; margin-top: 30px; border: 1px solid rgba(207,103,255,.7); border-radius: 29px; background: #210e3b; box-shadow: 0 18px 48px rgba(5,1,25,.28); }
+.epi-home .epi-home-hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background: url('/images/home/mall-celebration.png') center 58% / cover no-repeat; }
+.epi-home .epi-home-hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(28,13,55,.98) 0%, rgba(28,13,55,.93) 29%, rgba(30,11,58,.73) 46%, rgba(29,8,48,.06) 78%); }
+.epi-home .epi-home-hero-content { padding: 42px clamp(28px, 4vw, 60px); position: relative; }
+.epi-home .epi-home-hero h2 { margin: 0 0 28px; font-size: clamp(40px, 4vw, 60px); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; }
+.epi-home .epi-home-hero h2 span { background: linear-gradient(110deg,#a779ff,#d96afa,#ff88c4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.epi-home a.epi-home-create { display: inline-flex; align-items: center; justify-content: center; gap: 13px; min-height: 60px; padding: 13px 28px; border: 1px solid #ffb6ff; border-radius: 999px; background: linear-gradient(105deg,#7520f8,#a11cf0,#d62fdf); box-shadow: 0 0 23px rgba(199,61,255,.55), inset 0 1px 0 rgba(255,255,255,.35); color: white; text-decoration: none; font-size: 18px; font-weight: 700; transition: transform .18s ease, box-shadow .18s ease; }
+.epi-home a.epi-home-create:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(199,61,255,.75); }
+.epi-home .epi-home-projects { margin-top: 38px; padding-bottom: 24px; }
+.epi-home .epi-home-projects-header { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 16px; }
+.epi-home .epi-home-projects-header h2 { margin: 0; font-size: clamp(23px, 2vw, 30px); font-weight: 750; }
+.epi-home .epi-home-projects-header a, .epi-home .epi-home-empty a { display: inline-flex; align-items: center; gap: 8px; color: #f4b8ff; text-decoration: none; font-weight: 650; }
+.epi-home .epi-home-empty { display: flex; align-items: center; gap: 18px; padding: 26px; border: 1px solid rgba(211,140,255,.35); border-radius: 20px; background: rgba(26,12,56,.65); backdrop-filter: blur(8px); }
+.epi-home .epi-home-empty > svg { flex-shrink: 0; color: #e3adff; }
+.epi-home .epi-home-empty > div { flex: 1; }
+.epi-home .epi-home-empty h3 { margin: 0 0 5px; font-size: 18px; font-weight: 700; }
+.epi-home .epi-home-empty p { margin: 0; color: #e0d2ed; font-size: 15px; line-height: 1.5; }
+.epi-home a:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+@media (max-width: 900px) { .epi-home .epi-home-hero { min-height: 320px; } .epi-home .epi-home-empty { flex-wrap: wrap; } }
+@media (max-width: 600px) { .epi-home .epi-home-hero { min-height: 320px; border-radius: 22px; } .epi-home .epi-home-hero::after { background: linear-gradient(90deg,rgba(27,10,55,.97),rgba(27,10,55,.65)); } .epi-home .epi-home-hero-content { padding: 26px; } .epi-home a.epi-home-create { font-size: 15px; padding: 12px 17px; } .epi-home .epi-home-empty { padding: 18px; } }
+@media (prefers-reduced-motion: reduce) { .epi-home a.epi-home-create { transition: none; } }

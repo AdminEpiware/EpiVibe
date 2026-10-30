@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* ==========================================
+   EpiVibe — Global Styling Foundation
+   ========================================== */
+
+@theme {
+  --color-primary: #6d5dfc;
+  --color-primary-hover: #5848e5;
+
+  --color-background: #ffffff;
+  --color-surface: #f8f9fc;
+
+  --color-text-primary: #171923;
+  --color-text-secondary: #667085;
+
+  --color-border-default: #e5e7eb;
+
+  --font-sans: Inter, Arial, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}

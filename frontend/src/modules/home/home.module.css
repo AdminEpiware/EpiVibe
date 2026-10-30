@@ -1,0 +1,27 @@
+/* Home module only. Does not modify the shared shell or landing page. */
+.epi-home { width: 100%; max-width: 1260px; margin: 0 auto; color: #fff; }
+.epi-home-welcome h1 { margin: 0 0 10px; font-size: clamp(32px, 3.2vw, 52px); font-weight: 750; line-height: 1.14; letter-spacing: -.035em; }
+.epi-home-welcome p { max-width: 850px; margin: 0; color: #f1eafa; font-size: clamp(16px, 1.2vw, 20px); line-height: 1.55; }
+.epi-home-hero { position: relative; display: flex; align-items: center; isolation: isolate; overflow: hidden; min-height: 330px; margin-top: 34px; border: 1px solid rgba(216,112,255,.7); border-radius: 30px; background-color: #1c0d38; box-shadow: 0 20px 55px rgba(4,2,29,.25); }
+.epi-home-hero::before { content: ''; position: absolute; z-index: -2; inset: 0; background-image: url('/images/landing/hero-background.png'); background-size: cover; background-position: 72% 56%; }
+.epi-home-hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(24,10,55,.97) 0%, rgba(27,10,62,.92) 30%, rgba(28,10,65,.46) 59%, rgba(20,7,45,.06) 100%); }
+.epi-home-hero-content { padding: 42px clamp(28px, 5vw, 66px); }
+.epi-home-hero h2 { margin: 0 0 30px; font-size: clamp(38px, 4.2vw, 64px); line-height: 1.09; font-weight: 780; letter-spacing: -.035em; }
+.epi-home-hero h2 span { background: linear-gradient(100deg,#a980ff,#e277ff,#ff8ec7); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.epi-home-create { display: inline-flex; align-items: center; justify-content: center; gap: 13px; min-height: 57px; padding: 12px 26px; border: 1px solid #f1a5ff; border-radius: 999px; background: linear-gradient(105deg,#7620f7,#a51af2,#db31d8); box-shadow: 0 0 24px rgba(188,49,255,.4), inset 0 1px 0 rgba(255,255,255,.35); color: white; font-size: 17px; font-weight: 700; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+.epi-home-create:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(188,49,255,.65); }
+.epi-home-create:focus-visible, .epi-home-projects a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.epi-home-projects { margin-top: 42px; padding-bottom: 30px; }
+.epi-home-projects-header { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 17px; }
+.epi-home-projects-header h2 { margin: 0; font-size: clamp(22px,2vw,30px); letter-spacing: -.02em; }
+.epi-home-projects-header a, .epi-home-empty a { display: inline-flex; align-items: center; gap: 7px; color: #f0b4ff; font-weight: 650; text-decoration: none; }
+.epi-home-projects-header a:hover, .epi-home-empty a:hover { text-decoration: underline; }
+.epi-home-empty { display: flex; align-items: center; gap: 18px; padding: 27px; border: 1px solid rgba(213,148,255,.3); border-radius: 20px; background: rgba(21,12,55,.52); backdrop-filter: blur(6px); }
+.epi-home-empty > svg { flex: 0 0 auto; color: #d99cff; }
+.epi-home-empty > div { flex: 1; }
+.epi-home-empty h3 { margin: 0 0 6px; font-size: 17px; }
+.epi-home-empty p { margin: 0; color: #d9cde9; font-size: 14px; line-height: 1.5; }
+.epi-home-empty > a { flex: 0 0 auto; }
+@media (max-width: 850px) { .epi-home-hero { min-height: 290px; } .epi-home-empty { flex-wrap: wrap; } .epi-home-empty > a { margin-left: 48px; } }
+@media (max-width: 540px) { .epi-home-hero { min-height: 310px; border-radius: 22px; } .epi-home-hero::before { background-position: 72% center; } .epi-home-hero::after { background: linear-gradient(90deg,rgba(23,8,54,.95),rgba(23,8,54,.63)); } .epi-home-hero-content { padding: 26px; } .epi-home-create { font-size: 14px; padding: 12px 18px; gap: 8px; } .epi-home-empty { padding: 20px; } .epi-home-empty > a { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .epi-home-create { transition: none; } }
